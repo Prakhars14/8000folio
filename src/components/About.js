@@ -1,52 +1,70 @@
 import React, {useRef, useEffect} from 'react';
 import {Row, Col } from 'reactstrap';
 import hoverEffect from 'hover-effect';
-import img1 from '../assets/curology-min.png';
-import img2 from '../assets/yourspace-min.png';
-import img3 from '../assets/6.jpg';
+import i1 from '../assets/1.webp';
+import i2 from '../assets/2.webp';
+import i3 from '../assets/3.webp';
+import i4 from '../assets/4.webp';
+import i5 from '../assets/5.webp';
+import i6 from '../assets/6.webp';
+import i7 from '../assets/7.webp';
+import i8 from '../assets/8.webp';
+import i9 from '../assets/9.webp';
+import i10 from '../assets/10.webp';
+import trans from '../assets/disp.jpg';
 import useWindowSize from "./useWindowSize";
 
-const About = () => {
+const About = ({dimensions}) => {
 
   const imageRef1=useRef();
   const imageRef2=useRef();
   const imageRef3=useRef();
   const imageRef4=useRef();
+  const imageRef5=useRef();
 
   useEffect(() => {
     new hoverEffect({
       parent: imageRef1.current,
       intensity: 0.3,
-      image1: img1,
-      image2: img2,
-      displacementImage: img3
+      image1: i3,
+      image2: i4,
+      displacementImage: trans
   });
   }, [imageRef1])
   useEffect(() => {
     new hoverEffect({
+      parent: imageRef5.current,
+      intensity: 0.3,
+      image1: i2,
+      image2: i1,
+      displacementImage: trans
+  });
+  }, [imageRef5])
+  useEffect(() => {
+    new hoverEffect({
       parent: imageRef2.current,
       intensity: 0.3,
-      image1: img2,
-      image2: img1,
-      displacementImage: img3
+      image1: i10,
+      image2: i9,
+      displacementImage: trans
   });
   }, [imageRef2])
   useEffect(() => {
     new hoverEffect({
       parent: imageRef3.current,
       intensity: 0.3,
-      image1: img1,
-      image2: img2,
-      displacementImage: img3
+      image1: i5,
+      image2: i6,
+      displacementImage: trans
   });
   }, [imageRef3])
   useEffect(() => {
     new hoverEffect({
       parent: imageRef4.current,
       intensity: 0.3,
-      image1: img1,
-      image2: img2,
-      displacementImage: img3
+      image1: i7,
+      image2: i8,
+      displacementImage: trans
   });
   }, [imageRef4])
   const size = useWindowSize();
@@ -62,11 +80,14 @@ const About = () => {
       rounded: 0
     };
   
-    // Run scrollrender once page is loaded.
+    // // Run scrollrender once page is loaded.
     useEffect(() => {
       requestAnimationFrame(() => skewScrolling());
     }, []);
-  
+    // useEffect(() => {
+    //   let vh = dimensions.height * 0.01;
+    //   document.documentElement.style.setProperty("--vh", `${vh}px`);
+    // }, [dimensions.width]);
     //set the height of the body.
     useEffect(() => {
       setBodyHeight();
@@ -75,7 +96,7 @@ const About = () => {
     const setBodyHeight = () => {
       console.log(scrollContainer.current.getBoundingClientRect().height)
       document.body.style.height = `${
-        scrollContainer.current.getBoundingClientRect().height
+        scrollContainer.current.getBoundingClientRect().height-6000
       }px`;
     };
     
@@ -102,7 +123,6 @@ const About = () => {
     };
     return (
       <>
-      <div ref={app} className="App1">
       <div ref={scrollContainer} className="scroll">
       <div className='container'>
       <div className="link-to" id="about" />
@@ -113,8 +133,8 @@ const About = () => {
             <p className="about-p"> <span className="mr-5">&nbsp;</span>Hi, I'm Prakhar Singh and i like experimenting and building stuff that helps the world become a better place. <br/>
             <span className="mr-5">&nbsp;</span>I'm a Full Stack Developer graduated from S.R.M. University, India. I started off as a EEE guy slowly progressing to HTML/CSS/JS and now with my development stack of MERN. Well ofcourse i don't believe that stacks were ever a barrier.               
 
-                You can call me an avid learner who always seeks room for growth, expanding my interests
-             beyond the field of my technical degree and learn the plethora of skills that are offered.<br/><br/>
+                You can call me an avid learner who seeks room for growth, expanding my interests
+             beyond the field of my technical degree and learn the plethora of skills that are present.<br/><br/>
              <span className="mr-5">&nbsp;</span>On weekends, you can find me playing fifa, grooving to some new beats, or working out, or some anime who knows.</p>
         </div>
       <div className="link-to" id="work" />
@@ -123,11 +143,35 @@ const About = () => {
               Recent &nbsp;<span className="outline"> Stuff</span>
             </h3>
             <div className="project1">
+              <h4 className="header1">Micro-Frontend App</h4>
+              <Row>
+              <p className="about1"> <span className="mr-5">&nbsp;</span>Implemented Micro Frontend Architecture by creating individual sub apps with different frameworks like React, Vue and then pooling them in a container together and hosting it while sharing dependencies and other props.</p>
+              </Row>
+              <Row>
+                <Col lg={4}>
+                  
+                  <h5 className="header2">Stack: </h5>
+                  <ul className="list1">
+                    <li>Webpack Module Federation</li>
+                    <li>React</li>
+                    <li>Vue</li>
+                  </ul>
+                  <a href="https://github.com/Prakhars14/mfe_react" className="link2"><i class="fab fa-github"></i></a>
+                </Col>
+                <Col lg={8}>
+                  <div ref={imageRef4} className="image1"></div>
+                </Col>
+              </Row>
+            </div>
+            <div className="project1">
               <h4 className="header1">Emaily</h4>
               <Row>
-                <Col lg={8}>
-                  <p className="about1"> <span className="mr-5">&nbsp;</span>Emaily is an Email Feedback MERN Application with Payment system to buy credits in application. With these credits you can send email surveys to people who will fill them and send it back. These surveys are then displayed in our application with basic tracking also.</p>
-                  <h5 className="header2">TECH BEING IMPLEMENTED</h5>
+              <p className="about1"> <span className="mr-5">&nbsp;</span>Emaily is an Email Feedback MERN Application with Payment system to buy credits in application. With these credits you can send email surveys to people who will fill them and send it back. These surveys are then displayed in our application with basic tracking also.</p>
+              </Row>
+              <Row>
+                <Col lg={4}>
+                  
+                  <h5 className="header2">Stack: </h5>
                   <ul className="list1">
                     <li>React.js</li>
                     <li>Node.js</li>
@@ -135,62 +179,76 @@ const About = () => {
                     <li>Express.js</li>
                     <li>Sendgrid</li>
                   </ul>
-                  <a href="https://damp-everglades-20250.herokuapp.com/" className="link2"><i class="far fa-hand-point-right"></i>&nbsp;Demo</a>
-
+                  <a href="https://damp-everglades-20250.herokuapp.com/" className="link2"><i class="fas fa-globe"></i></a>
+                  <a href="https://github.com/Prakhars14/Feedback" className="link2"><i class="fab fa-github"></i></a>
+                  
                 </Col>
-                <Col lg={4}>
+                <Col lg={8}>
                   <div ref={imageRef2} className="image1"></div>
                 </Col>
               </Row>
             </div>
+
             <div className="project1">
               <h4 className="header1">Burger Kink</h4>
               <Row>
-                <Col lg={8}>
-                  <p className="about1"> <span className="mr-5">&nbsp;</span>Burger Kink is a web app created to order Burgers. It consists of Authentication, customizing your own special burger, details of the order with previous order history also </p>
-                  <h5 className="header2">TECH BEING IMPLEMENTED</h5>
+              <p className="about1"> <span className="mr-5">&nbsp;</span>Burger Kink is a web app created to order Burgers. It consists of Authentication, customizing your own special burger, details of the order with previous order history also </p>
+              </Row>
+              <Row>
+                <Col lg={4}>
+                  
+                  <h5 className="header2">Stack: </h5>
                   <ul className="list1">
                     <li>React.js</li>
                     <li>Firebase</li>
                   </ul>
-                  <a href="https://burgerkink.netlify.app" className="link2"><i class="far fa-hand-point-right"></i>&nbsp;Demo</a>
+                  <a href="https://burgerkink.netlify.app" className="link2"><i class="fas fa-globe"></i></a>
+                  <a href="https://github.com/Prakhars14/BurgerKink" className="link2"><i class="fab fa-github"></i></a>
                 </Col>
-                <Col lg={4}>
+                <Col lg={8}>
                   <div ref={imageRef1} className="image1"></div>
+                </Col>
+              </Row>
+            </div>
+            <div className="project1">
+              <h4 className="header1">College Website</h4>
+              <Row>
+              <p className="about1"> <span className="mr-5">&nbsp;</span>My first freelancing work, a college website. It was a fullstack MERN Project with dashboard setup as well for administrator access. Included online submitting of forms, and other educational activities.</p>
+              </Row>
+              <Row>
+                <Col xl={4}>
+                  <h5 className="header2">Stack: </h5>
+                  <ul className="list1">
+                    <li>React.js</li>
+                    <li>Node.js</li>
+                    <li>Mongo DB</li>
+                    <li>Express.js</li>
+                  </ul>
+
+                </Col>
+                <Col xl={8}>
+                  <div ref={imageRef5} className="image1"></div>
                 </Col>
               </Row>
             </div>
             <div className="project1">
               <h4 className="header1">News with AI</h4>
               <Row>
-                <Col lg={8}>
-                  <p className="about1"> <span className="mr-5">&nbsp;</span>A React News Web app combined with AI to present news on the screen according to what the user wants to see based on what he says/ commands </p>
-                  <h5 className="header2">TECH BEING IMPLEMENTED</h5>
+              <p className="about1"> <span className="mr-5">&nbsp;</span>A React News Web app combined with AI to present news on the screen according to what the user wants to see based on what he says/ commands </p>
+              </Row>
+              <Row>
+                <Col lg={4}>
+                  
+                  <h5 className="header2">Stack: </h5>
                   <ul className="list1">
                     <li>React.js</li>
                     <li>Voice Recognition AI</li>
                   </ul>
-                  <a href="https://newswithai.netlify.app" className="link2"><i class="far fa-hand-point-right"></i>&nbsp;Demo</a>
+                  <a href="https://newswithai.netlify.app" className="link2"><i class="fas fa-globe"></i></a>
+                  <a href="https://github.com/Prakhars14/News_AI" className="link2"><i class="fab fa-github"></i></a>
                 </Col>
-                <Col lg={4}>
-                  <div ref={imageRef3} className="image1"></div>
-                </Col>
-              </Row>
-            </div>
-            <div className="project1">
-              <h4 className="header1">Weather PWA</h4>
-              <Row>
                 <Col lg={8}>
-                  <p className="about1"> <span className="mr-5">&nbsp;</span>A PWA created with React using weather API available to search for updates. Easily installable on phones, computer.</p>
-                  <h5 className="header2">TECH BEING IMPLEMENTED</h5>
-                  <ul className="list1">
-                    <li>React.js</li>
-                    <li>Weather API</li>
-                  </ul>
-                  <a href="https://weatherapp-pwa.netlify.app/" className="link2"><i class="far fa-hand-point-right"></i>&nbsp;Demo</a>
-                </Col>
-                <Col lg={4}>
-                  <div ref={imageRef4} className="image1"></div>
+                  <div ref={imageRef3} className="image1"></div>
                 </Col>
               </Row>
             </div>
@@ -208,7 +266,6 @@ const About = () => {
             </Row>
         </div>
 
-        </div>
         </div>
         </div>
       </>

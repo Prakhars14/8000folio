@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import { ReactComponent as UpArrow } from "../assets/up-arrow-circle.svg";
 import { openMenu, closeMenu } from "../animations/menuAnimations";
@@ -25,9 +25,9 @@ const Header = ({ history, dimensions }) => {
       <div className='containerr'>
         <div className='roww v-center space-between'>
           <div className='logo'>
-            <NavLink to='/' exact>
+            <a href='/'>
               prx
-            </NavLink>
+            </a>
           </div>
           <div className='nav-toggle'>
             <div

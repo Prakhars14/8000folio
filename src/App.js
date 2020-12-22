@@ -5,21 +5,13 @@ import "./styles/App.scss";
 import Header from "./components/header";
 import Navigation from "./components/navigation";
 import './components/index';
-import CaseStudies from "./pages/caseStudies";
-import Approach from "./pages/approach";
-import Services from "./pages/services";
-import About from "./pages/about";
+import About from "./components/About";
 import Home from "./pages/home";
-import web from './assets/videos/websites.mp4';
-import web1 from './assets/videos/apps.mp4';
-import web2 from './assets/videos/branding.mp4';
 
 const routes = [
   { path: "/", name: "Home", Component: Home },
-  { path: "/case-studies", name: "caseStudies", Component: CaseStudies },
-  { path: "/approach", name: "approach", Component: Approach },
-  { path: "/services", name: "services", Component: Services },
-  { path: "/about-us", name: "about", Component: About }
+  { path:"/about", name: "About", Component: About }
+
 ];
 
 function debounce(fn, ms) {
@@ -67,15 +59,15 @@ function App() {
       <div class="cursor">
       <div class="cursor-media">
         <video
-          
+          src="https://cdn.videvo.net/videvo_files/video/free/2020-05/small_watermarked/200428_Work%20From%20Home_01_4k_015_preview.webm"
           preload="auto"
           autoPlay
           muted
           loop
           id="websites"
-        ><source src= {web} type="video/mp4" /></video>
+        ></video>
         <video
-          src={web1}
+          src="https://cdn.videvo.net/videvo_files/video/free/2016-12/small_watermarked/Typing_dark_03_Videvo_preview.webm"
           preload="auto"
           autoPlay
           muted
@@ -83,7 +75,7 @@ function App() {
           id="apps"
         ></video>
         <video
-          src={web2}
+          src="https://cdn.videvo.net/videvo_files/video/free/2016-10/small_watermarked/160812_061_Iphone9_4K_preview.webm"
           preload="auto"
           autoPlay
           muted

@@ -3,7 +3,7 @@ import IntroOverlay from "../components/introOverlay";
 import Banner from "../components/banner";
 import Cases from "../components/cases";
 import gsap from "gsap";
-import About from "../components/About";
+import { Redirect} from 'react-router-dom';
 
 let tl = gsap.timeline();
 
@@ -46,6 +46,10 @@ const homeAnimation = completeAnimation => {
 
 const Home = ({ dimensions }) => {
   const [animationComplete, setAnimationComplete] = useState(false);
+  const [offset, setOffset] = useState(false);
+
+
+
 
   const completeAnimation = () => {
     setAnimationComplete(true);
@@ -60,12 +64,23 @@ const Home = ({ dimensions }) => {
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }, [dimensions.width]);
 
+
+  useEffect(() => {
+    window.onscroll = () => {
+      setOffset(true)
+    }
+  }, []);
+
+  console.log(offset); 
+
+    if(offset){
+      return <Redirect to="/about" />
+    }
   return (
     <>
       {animationComplete === false ? <IntroOverlay /> : ""}
       <Banner />
       <Cases />
-      {animationComplete === false ?null:<About/>}
     </>
   );
 };

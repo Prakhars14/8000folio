@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactComponent as RightArrow } from "../assets/arrow-right.svg";
 import pp1 from '../assets/pp1.jpg';
-import pp2 from '../assets/pp2.jpg';
+import pp2 from '../assets/pp2.png';
 
 
 const Banner = () => {
@@ -18,8 +18,20 @@ const Banner = () => {
             </div>
           </h2>
           <div className='btn-row'>
-            <a href='#about'>
-              tune in&nbsp; <i class="fas fa-arrow-right"></i>
+            <a href='/about'>
+              <button type="button" class="btn">
+                <div class="btn__inner">
+                  <div class="btn__layer btn__layer--top">
+                    Tune in
+                    <span class="btn__border btn__border--bottom-left"></span>
+                    <span class="btn__border btn__border--top-right"></span>
+                  </div>
+                </div>
+                <div class="btn__layer btn__layer--bottom">
+                  This is a button
+                  <span class="btn__border btn__border--bottom-right"></span>
+                </div>
+              </button>
             </a>
           </div>
           <div className="bg-image">

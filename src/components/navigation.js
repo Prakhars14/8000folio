@@ -10,23 +10,23 @@ const Navigation = () => {
             {/* <div className='nav-label'>Menu</div> */}
             <ul className='nav-links'>
               <li>
-                <NavLink to='/case-studies' exact>
+                <a href='#about'>
                   Who's talking
-                </NavLink>
+                </a>
               </li>
               <li>
-                <NavLink to='/approach' exact>
+                <a href='#work'>
                   My good deeds
-                </NavLink>
+                </a>
               </li>
               <li>
-                <NavLink to='/services' exact>
+                <a href='#contact'>
                   Stalk me (plz)
-                </NavLink>
+                </a>
               </li>
             </ul>
           </div>
-          <div className='nav-column'>
+          {/* <div className='nav-column'>
             <div className='nav-label'>Contact</div>
             <div className='nav-infos'>
               <ul className='nav-info'>
@@ -37,12 +37,8 @@ const Navigation = () => {
                   </NavLink>
                 </li>
               </ul>
-              <ul className='nav-info'>
-                <li className='nav-info-label'>Phone</li>
-                <li>+41 (0) 79 510 28 70</li>
-              </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>

@@ -13,34 +13,34 @@ const Cases = () => {
               <div className="case-m">
                 <Row className="d-flex justify-content-center">
                   <div data-video-src="websites" class="hero-inner-link-item">
-                    <a href="#about"> <span>About</span></a>
+                    <a href="/about#about"> <span>About</span></a>
                   </div>
                 </Row>
                 <Row className="d-flex justify-content-center">
                 <div data-video-src="apps" class="hero-inner-link-item">
-                <a href="#work"> <span>Work</span></a>
+                <a href="/about#work"> <span>Work</span></a>
                   </div>
                 </Row>
                 <Row className="d-flex justify-content-center">
                 <div class="hero-inner-link-item" data-video-src="branding">       
-                <a href="#contact"> <span>Contact</span></a>
+                <a href="/about#contact"> <span>Contact</span></a>
                   </div>
                 </Row>
               </div>
               <div className="case">
               <div data-video-src="websites" class="hero-inner-link-item">
                 
-                <a href="#about"> <span>About</span></a>
+                <a href="/about#about"> <span>About</span></a>
                 </div>
               </div>
               <div className="case">
               <div data-video-src="apps" class="hero-inner-link-item">
-                <a href="#work"> <span>Work</span></a>
+                <a href="/about#work"> <span>Work</span></a>
               </div></div>
               <div className="case">
               <div class="hero-inner-link-item" data-video-src="branding">
                 
-                <a href="#contact"> <span>Contact</span></a>
+                <a href="/about#contact"> <span>Contact</span></a>
               </div></div>
               </div>
             </div>
