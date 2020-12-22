@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
@@ -26,19 +25,6 @@ const Navigation = () => {
               </li>
             </ul>
           </div>
-          {/* <div className='nav-column'>
-            <div className='nav-label'>Contact</div>
-            <div className='nav-infos'>
-              <ul className='nav-info'>
-                <li className='nav-info-label'>Email</li>
-                <li>
-                  <NavLink to='/contact' exact>
-                    Get in touch (not during covid though!)
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
-          </div> */}
         </div>
       </div>
     </nav>
